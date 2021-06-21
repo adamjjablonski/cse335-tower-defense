@@ -1,16 +1,19 @@
+
+
 #include "pch.h"
 #include "CppUnitTest.h"
 
 #include "Board.h"
 
-#include "Balloon.h"
-
+#include "TowerBomb.h"
+#include "TowerEight.h"
+#include "TowerRing.h"
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
 namespace Testing
 {
-	TEST_CLASS(BalloonTest)
+	TEST_CLASS(TowerTest)
 	{
 	public:
 
@@ -25,25 +28,16 @@ namespace Testing
 			// This is an empty test just to ensure the system is working
 		}
 
-		TEST_METHOD(TestBalloon)
+		TEST_METHOD(TestTowerConstructs)
 		{
 			CBoard board;
 
-			CBalloon balloon1(&board);
+			CTowerBomb towerBomb(&board);
 
-			Assert::IsTrue(balloon1.GetX() == 0);
+			CTowerEight towerEight(&board);
 
-			balloon1.SetX(50);
-
-			Assert::IsTrue(balloon1.GetX() == 50);
-
-			Assert::IsTrue(balloon1.GetY() == 0);
-
-
-
-
+			CTowerRing towerRing(&board);
 
 		}
-
 	};
 }
